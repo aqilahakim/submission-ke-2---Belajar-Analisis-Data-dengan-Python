@@ -15,6 +15,9 @@ def load_data():
 
 df_final = load_data()
 
+# Hapus missing values di dataset
+df_final.dropna(inplace=True)
+
 # Judul dan deskripsi
 st.title("PM2.5 Air Quality Analysis Dashboard")
 st.write("""
@@ -58,8 +61,12 @@ if analysis_type == "Dampak Suhu terhadap PM2.5":
     
     # Regresi Linier antara Suhu dan PM2.5
     st.subheader("Regresi Linier Suhu vs PM2.5")
-    X = df_final['TEMP']
-    y = df_final['PM2.5']
+
+    # Menghapus missing values untuk kolom yang akan digunakan pada regresi
+    df_regresi = df_final[['TEMP', 'PM2.5']].dropna()
+
+    X = df_regresi['TEMP']
+    y = df_regresi['PM2.5']
     X = sm.add_constant(X)  # Tambahkan konstanta untuk regresi
     model = sm.OLS(y, X).fit()
     st.write(model.summary())
