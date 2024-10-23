@@ -10,7 +10,7 @@ st.set_page_config(page_title="PM2.5 Air Quality Dashboard", layout="wide")
 # Load dataset
 @st.cache
 def load_data():
-    df = pd.read_csv('PRSA_Data_Aotizhongxin_20130301-20170228.csv')  # Sesuaikan path dataset
+    df = pd.read_csv('dashboard/PRSA_Data_Aotizhongxin_20130301-20170228.csv')  # Sesuaikan path dataset
     return df
 
 df_final = load_data()
