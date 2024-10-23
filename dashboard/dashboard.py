@@ -7,7 +7,7 @@ import seaborn as sns
 # Load dataset
 @st.cache
 def load_data():
-    df = pd.read_csv('PRSA_Data_Aotizhongxin_20130301-20170228.csv')  # Sesuaikan path dataset
+    df = pd.read_csv('dashboard/PRSA_Data_Aotizhongxin_20130301-20170228.csv')  # Sesuaikan path dataset
     return df
 
 df_final = load_data()
