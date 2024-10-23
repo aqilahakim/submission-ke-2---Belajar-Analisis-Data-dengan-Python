@@ -111,4 +111,4 @@ if st.sidebar.checkbox("Tampilkan Kesimpulan"):
 
 # --- Footer ---
 st.sidebar.markdown("---")
-st.sidebar.write("**Dashboard oleh [Nama Anda]**")
+st.sidebar.write("**Dashboard oleh Alif Aqila Hakim**")
